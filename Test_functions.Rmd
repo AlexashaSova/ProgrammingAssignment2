@@ -1,3 +1,7 @@
+# Testing functions from `cachematrix.R`
+
+## Functions code:
+```{r}
 ## Function that creates matrix object in order to store cache of the inversed matrix
 ## This function takes one argument, it is square matrix
 
@@ -53,3 +57,33 @@ cacheSolve <- function(matr, ...) {
         inv_var
 }
         
+```
+
+## Testing
+
+Create square matrix 3\*3 (I've calculated, it is invertible :) )
+
+```{r}
+A <- matrix(c(6, 5, 3, 8, 3, 2, 0, 8, 6), 3, 3) 
+A
+```
+
+Create matrix object:
+
+```{r}
+A1 <- makeCacheMatrix(A)
+```
+
+Get inverse of the matrix:
+
+```{r}
+cacheSolve(A1)
+```
+
+Getting inverse of the matrix one more time, assumed to have a notification, that we get results from cache:
+
+```{r}
+cacheSolve(A1)
+```
+
+The message got, inverse matrix matches my hand-calculated result, everything works allright.
