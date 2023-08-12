@@ -22,10 +22,10 @@ makeCacheMatrix <- function(matr = matrix()) {
                 inv_var
         }
         ## list, that contains a list of function calls to store inversed matrix objects
-        list(set = set_value,
-             get = get_value,
-             setinverse = set_inverse_matr,
-             getinverse = get_inverse_matr)
+        list(set_value = set_value,
+             set_value = get_value,
+             set_inverse_matr = set_inverse_matr,
+             get_inverse_matr = get_inverse_matr)
 }
 
 
